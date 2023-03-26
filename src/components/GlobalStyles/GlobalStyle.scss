@@ -1,0 +1,27 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+// Css co ban
+:root {
+    --primary: #fe2c55;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+@layer components {
+    .header-nav {
+        @apply text-base text-black font-bold hover:underline hover:text-orange-900 underline-offset-2 decoration-[1px] cursor-pointer duration-300;
+    }
+}
