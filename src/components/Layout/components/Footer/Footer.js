@@ -1,11 +1,10 @@
 import { logo } from '~/assets';
 import { FaFacebook, FaGithub, FaHome, FaInstagram, FaNapster, FaTwitter, FaWhmcs, FaYoutube } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
-export default function Footer() {
+export default function Footer({ isMobile }) {
     return (
         <div className="bg-black text-[#949494] py-12 font-titleFont">
-            <div className="max-w-screen-xl mx-auto grid grid-cols-4">
-                {/* logo */}
+            <div className="max-w-screen-xl mx-auto grid grid-cols-2 md:grid-cols-4">
                 <div className="flex flex-col gap-4">
                     <img className="w-32 bg-white" src={logo} alt="Logo" />
                     <p className="text-white text-sm tracking-wide">vanvi.com</p>

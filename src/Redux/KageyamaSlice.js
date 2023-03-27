@@ -19,13 +19,35 @@ export const kageyamaSlice = createSlice({
             }
         },
         deleteCard: (state, action) => {
-            state.productData.filter((item) => item._id !== action.payload);
+            state.productData = state.productData.filter((item) => item._id !== action.payload);
         },
         resetCard: (state, action) => {
             state.productData = [];
         },
+        decrementQuantity: (state, action) => {
+            const item = state.productData.find((item) => item._id === action.payload._id);
+            if (item.quantity === 1) {
+                item.quantity = 1;
+            } else {
+                item.quantity--;
+            }
+        },
+        incrementQuantity: (state, action) => {
+            const item = state.productData.find((item) => item._id === action.payload._id);
+            if (item) {
+                item.quantity += 1;
+            }
+        },
+        // login
+        addUser: (state, action) => {
+            state.userInfo = action.payload;
+        },
+        removeUser: (state, action) => {
+            state.userInfo = null;
+        },
     },
 });
 
-export const { addToCard } = kageyamaSlice.actions;
+export const { addToCard, deleteCard, resetCard, incrementQuantity, decrementQuantity, addUser, removeUser } =
+    kageyamaSlice.actions;
 export default kageyamaSlice.reducer;

@@ -27,7 +27,7 @@ export default function Product() {
                 </p>
             </div>
 
-            <div className="max-w-screen-xl mx-auto py-10 grid grid-cols-4 gap-8">
+            <div className="md:max-w-screen-xl mx-auto py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
                 {products.map((product, index) => (
                     <ProductCard key={index} data={product} />
                 ))}
